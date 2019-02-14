@@ -29,8 +29,8 @@ public class AdminUSerDaoImpl implements adminUserDao {
     }
     @Override
     public boolean CheckUser(String userName,String passWord) {
-        sql = "Select * From USER Where name=?";
-        List<user> users = jdbcTemplate.query(sql,new MyRowMapper(),userName);
+        sql = "Select * From USER Where name=? AND password=?";
+        List<user> users = jdbcTemplate.query(sql,new MyRowMapper(),userName,passWord);
         if (users.size()==0){
             return false;
         }else {

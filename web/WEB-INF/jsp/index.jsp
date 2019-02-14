@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1 style="color: brown;">Hello java</h1>
-<form action="login.action" method="post">
+<form action="/index/login" method="post">
     <table border='1' align="center">
         <caption>USER LOGIN</caption>
         <tr>

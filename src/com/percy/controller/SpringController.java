@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
  * @create 2019-02-12  下午10:23
  * @descreption:
  **/
-@RequestMapping(value = "/index")
+
 @Controller
 public class SpringController{
     @Autowired
@@ -23,13 +23,16 @@ public class SpringController{
         System.out.println("SpringController");
     }
 
-    @RequestMapping(value = "/spring.action")
-    public ModelAndView springController(){
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("index");
-        return modelAndView;
+    @RequestMapping(value = "/")
+    public String index(){
+        return "index";
     }
-    @RequestMapping(value = "/login.action")
+    @RequestMapping(value = "spring")
+    public String springController(){
+
+        return "index";
+    }
+    @RequestMapping(value = "login")
     public ModelAndView loginView(HttpServletRequest request, HttpServletResponse response, HttpSession session, Model model){
         String username = request.getParameter("username");
         String password = request.getParameter("password");
